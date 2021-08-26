@@ -1,0 +1,531 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KAISAHAN</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mycss.css">
+    <script src="http://kit.fontawesome.com/26d4a64054.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" type="image" href="images/logo.png">
+    <style>
+        .smallBack{
+            opacity: 0;
+        }
+        .activeSmall{
+            opacity: 1;
+        }
+        .activeBox{
+            color: green;
+            border: 1px solid green;
+            outline: none;
+        }
+        .backgroundpic{
+            opacity: 0;
+        }
+        .activePic{
+            opacity: 1;
+        }
+        .bounce{
+            animation: bounce 1s infinite;
+            @keyframes bounce {
+                0%{
+                    transform:translateY('500px');
+                },
+                50%{
+                    transform:translateY('300px');
+                },
+                70%{
+                    transform:translateY('250px');
+                },
+                80%{
+                    transform:translateY('250px');
+                },
+                90%{
+                    transform:translateY('0');
+                },
+                100%{
+                    transform:translateY('0px');
+                }
+
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="search" class="fixed w-screen h-screen bg-gray-500 z-10 flex justify-center items-center hidden" style="background-color: rgba(12, 12, 12, 0.623);transition:1s">
+        <input type="text" id="searchbox" placeholder="Search" class="h-36 w-3/4 bg-transparent text-6xl text-center focus:outline-none border-b-2 border-white-200">
+    </div>
+    <div class="h-screen overflow-auto bg-blue-100 w-full flex justify-center bg-cover bg-center shadow-xl" style="background-image:url('images/pic1.jpg')">
+        <div class="laptop:w-70rem tablet:w-11/12 mobile:w-full bg-white shadow-boxShadow relative top-50">
+          
+            <header class="flex flex-wrap justify-end p-12 mobile:p-6">
+
+                <div class="laptop:w-2/12 tablet:w-3/12 flex justify-center mobile:w-full">
+                    <img src="images/logo.png" id="background" class="h-full tablet:h-36 mobile:h-20" alt="">
+                </div>
+                <div class="laptop:w-10/12 tablet:w-9/12 mobile:w-full">
+                    <h1 class="text-4xl tablet:text-3xl mobile:text-3xl font-extrabold text-kaisahan-font-color">KAISAHAN</h1>
+                    <p class="text-xl tablet:text-lg mobile:text-1xl font-bold mt-3 text-kaisahan-font-color">TUNGO SA KAUNLARAN NG KANAYUNAN AT REPORMANG PANSAKAHAN</p>
+                    <p class="text-xl tablet:text-lg mobile:text-1xl font-thin mt-3">SOLIDARITY TOWARDS AGRARIAN REFORM AND RURAL DEVELOPMENT</p>
+                </div>
+                <div class="relative laptop:w-10/12 laptop:m-0 tablet:w-full tablet:mt-6 mobile:w-full mobile:mt-6  border-t border-b border-black h-14 flex items-center laptop:justify-start mobile:justify-center">
+                    <a href="#" class="p-3 laptop:inline mobile:hidden">HOME</a>
+                    <div class="p-3 laptop:inline mobile:hidden relative" id="about" onmouseover="navIn(this)" onmouseout="navOut(this)">ABOUT <i class="fas fa-caret-down"></i>
+                        <div class="absolute z-20 bg-white flex hidden flex-col w-40">
+                            <a href="#" class="py-2 px-4 text-sm hover:bg-gray-200">The organization</a>
+                            <a href="#" class="py-2 px-4 text-sm hover:bg-gray-200">Services</a>
+                            <a href="#" class="py-2 px-4 text-sm hover:bg-gray-200">Project</a>
+                            <a href="#" class="py-2 px-4 text-sm hover:bg-gray-200">Career</a>
+                        </div>
+                    </div>
+
+                    <a href="#" class="p-3 laptop:inline mobile:hidden">NEWS</a>
+
+                    <div class="p-3 laptop:inline mobile:hidden relative" id="feature" onmouseover="navIn(this)" onmouseout="navOut(this)">FEATURES <i class="fas fa-caret-down"></i>
+                        <div class="absolute z-20 bg-white flex hidden flex-col w-40">
+                            <a href="#" class="py-2 px-4 text-sm hover:bg-gray-200">Stories</a>
+                            <a href="#" class="py-2 px-4 text-sm hover:bg-gray-200">Options</a>
+                            <a href="#" class="py-2 px-4 text-sm hover:bg-gray-200">Gallery</a>
+                        </div>
+                    </div>
+
+                        <div class="p-3 laptop:inline mobile:hidden relative" id="ADVOCACY" onmouseover="navIn(this)" onmouseout="navOut(this)">ADVOCACY & CAMPAIGNS <i class="fas fa-caret-down"></i>
+                            <div class="absolute z-20 bg-white flex hidden flex-col w-40">
+                                <a href="#" class="py-2 px-4 text-sm hover:bg-gray-200">Agrarian Reform</a>
+                                <a href="#" class="py-2 px-4 text-sm hover:bg-gray-200">Rural Development</a>
+                                <a href="#" class="py-2 px-4 text-sm hover:bg-gray-200">Land Use</a>
+                                <a href="#" class="py-2 px-4 text-sm hover:bg-gray-200">Previous Projects</a>
+                            </div>
+                        </div>
+
+                        <div class="p-3 laptop:inline mobile:hidden relative" id="RESOURCES" onmouseover="navIn(this)" onmouseout="navOut(this)">RESOURCES <i class="fas fa-caret-down"></i>
+                            <div class="absolute z-20 bg-white flex hidden flex-col w-40">
+                                <a href="#" class="py-2 px-4 text-sm hover:bg-gray-200">Press Statements</a>
+                                <a href="#" class="py-2 px-4 text-sm hover:bg-gray-200">Position papers</a>
+                                <a href="#" class="py-2 px-4 text-sm hover:bg-gray-200">Publications</a>
+                            </div>
+                        </div>
+                    <a href="#" class="p-3 laptop:inline mobile:hidden">CONTACT US</a>
+                    <div class="p-3 ml-2 bg-gray-200 rounded laptop:inline mobile:hidden" onclick="search()">
+                        <i class="fas fa-search"></i>
+                    </div>
+
+                    <label for="checkbox" class="p-3 ml-2 bg-gray-200 rounded hidden laptop:hidden mobile:inline" onclick="showNhide()"><span id="m"><i class="fas fa-bars"></i></span><span class="hidden" id="x"><i class="fas fa-times"></i></span></label>
+                    <input type="checkbox" class="hidden" id="checkbox">
+                </div>
+            </header>
+            <div class="absolute w-full z-20">
+                <div class="relative flex flex-col bg-white h-0 overflow-hidden transition duration-500" id="sbMenu">
+                    <a href="" class="w-full py-2 px-4 hover:bg-gray-200 transition duration-500">HOME</a>
+
+                    <div class="w-full Py-2 px-4 hover:bg-gray-200 transition duration-500" id="subabout" onclick="openSub(this)">ABOUT <i class="fas fa-caret-down float-right mr-4"></i></div>
+                        <div class="w-full h-0 overflow-hidden flex flex-col">
+                                <a href="#" class="py-2 px-4 text-sm hover:bg-gray-200">The organization</a>
+                                <a href="#" class="py-2 px-4 text-sm hover:bg-gray-200">Services</a>
+                                <a href="#" class="py-2 px-4 text-sm hover:bg-gray-200">Project</a>
+                                <a href="#" class="py-2 px-4 text-sm hover:bg-gray-200">Career</a>
+                        </div>
+
+                    <a href="#" class="w-full py-2 px-4 hover:bg-gray-200 transition duration-500">NEWS</a>
+
+                    <a href="#" class="w-full py-2 px-4 hover:bg-gray-200 transition duration-500"  id="subfeature" onclick="openSub(this)">FEATURES <i class="fas fa-caret-down float-right mr-4"></i></a>
+                        <div class="w-full h-0 overflow-hidden flex flex-col">
+                            <a href="#" class="py-2 px-4 text-sm hover:bg-gray-200">Stories</a>
+                            <a href="#" class="py-2 px-4 text-sm hover:bg-gray-200">Opinions</a>
+                            <a href="#" class="py-2 px-4 text-sm hover:bg-gray-200">Gallery</a>
+                        </div>
+
+                    <a href="#" class="w-full py-2 px-4 hover:bg-gray-200 transition duration-500" id="subadvocacy" onclick="openSub(this)" >ADVOCACY & CAMPAIGNS <i class="fas fa-caret-down float-right mr-4"></i></a>
+                        <div class="w-full h-0 overflow-hidden flex flex-col">
+                            <a href="#" class="py-2 px-4 text-sm hover:bg-gray-200">Agrarian Reform</a>
+                            <a href="#" class="py-2 px-4 text-sm hover:bg-gray-200">Rural Development</a>
+                            <a href="#" class="py-2 px-4 text-sm hover:bg-gray-200">Land Use</a>
+                            <a href="#" class="py-2 px-4 text-sm hover:bg-gray-200">Previous Projects</a>
+                        </div>
+
+                    <a href="#" class="w-full py-2 px-4 hover:bg-gray-200 transition duration-500" id="subresource" onclick="openSub(this)">RESOURCES <i class="fas fa-caret-down float-right mr-4"></i></a>
+                        <div class="w-full h-0 overflow-hidden flex flex-col">
+                            <a href="#" class="py-2 px-4 text-sm hover:bg-gray-200">Press Statements</a>
+                            <a href="#" class="py-2 px-4 text-sm hover:bg-gray-200">Position Papers</a>
+                            <a href="#" class="py-2 px-4 text-sm hover:bg-gray-200">Publications</a>
+                        </div>
+
+                    <a href="#" class="w-full py-2 px-4 hover:bg-gray-200 transition duration-500">CONTACT US</a>
+                    
+                </div>
+            </div>
+            
+            
+            <div class="w-full mt-2 bg-white laptop:px-12 mobile:px-0 flex flex-wrap">
+                <div class="w-full overflow-hidden relative h-78vh">
+                   
+                    <div class="h-full w-full absolute z-10 bg-blacku flex ">
+                        <div class="flex absolute top-3/4 laptop:left-28 mobile:left-10">
+                            <div class="h-8 w-8 border border-white flex justify-center items-center text-white bounce cursor-pointer" onclick="toTop()">
+                                <i class="fas fa-angle-down"></i>
+                            </div>
+                            <span class="text-white ml-2 text-sm mt-2 bottom-0">Scroll Down</span>
+                        </div>
+                       <div class="laptop:w-3/12 mobile:w-2/12 flex flex-col  justify-center items-center">
+                            <button class="p-2 mb-3 text-white cursor-pointer text-9px box activeBox"><i class="fas fa-stop"></i></button>
+                            <button class="p-2 mb-3 text-white cursor-pointer text-9px box"><i class="fas fa-stop"></i></button>
+                            <button class="p-2 mb-3 text-white cursor-pointer text-9px box"><i class="fas fa-stop"></i></button>
+                            <button class="p-2 mb-3 text-white cursor-pointer text-9px box"><i class="fas fa-stop"></i></button>
+                            <button class="p-2 mb-3 text-white cursor-pointer text-9px box"><i class="fas fa-stop"></i></button>
+                        </div>
+                        <div class="w-6/12">
+                            <div class="relative w-full h-full" id="SlideContainer" style="transition: all .5s ease;">
+                                <div class="w-full h-full flex justify-center items-start flex-col absolute textSlide">
+                                    <h1 class="text-white text-3xl font-bold mb-10">
+                                        <span class="text-pink">Larrazabals</span> delay sugarcane harvest of agrarian reform beneficiaries
+                                    </h1>
+                                    <p class="text-gray-300 mb-10">
+                                        ORMOC CITY — Farmer Pablo Silva began his day last March 28 brimming with hope. 
+                                        He and his fellow agrarian reform beneficiaries (ARB) were about to harvest their 
+                                        first sugarcane as landowner
+                                    </p>
+
+                                    <button class="w-40 py-3 border-4 border-green-800 bg-green-800 text-white font-bold hover:bg-white hover:text-black">READ MORE <span class="font-thin text-md"><i class="fas fa-arrow-right"></i></span></button>
+                                </div>
+
+                                <div class="w-full h-full flex justify-center items-start flex-col absolute textSlide">
+                                    <h1 class="text-white text-3xl font-bold mb-10">
+                                        <span class="text-pink">DAR Negros</span> distributes Yusay land to Bago farmers despite resistance
+                                    </h1>
+                                    <p class="text-gray-300 mb-10">
+                                        Despite landowner resistance, DAR pushed through with the
+                                        scheduled distribution of titles and installation of 31 
+                                        agrarian reform beneficiaries (ARB) in a 16.1209-hectare
+                                        land last Wednesday,
+                        
+                                    </p>
+
+                                    <button class="w-40 py-3 border-4 border-green-800 bg-green-800 text-white font-bold hover:bg-white hover:text-black">READ MORE <span class="font-thin text-md"><i class="fas fa-arrow-right"></i></span></button>
+                                </div>
+
+                                <div class="w-full h-full flex justify-center items-start flex-col absolute textSlide">
+                                    <h1 class="text-white text-3xl font-bold mb-10">
+                                        <span class="text-pink">Farmer</span> beneficiaries occupy Capahi land in Sabang Bao, Labrador
+                                    </h1>
+                                    <p class="text-gray-300 mb-10">
+                                        ORMOC City – DAR Leyte finally installed eight (8)
+                                         agrarian reform beneficiaries in a total of 16.05 hectares land, 
+                                         composed of 3 lots located in Barangay Sabang Bao and Labrador. DAR Re
+
+
+                                    </p>
+
+                                    <button class="w-40 py-3 border-4 border-green-800 bg-green-800 text-white font-bold hover:bg-white hover:text-black">READ MORE <span class="font-thin text-md"><i class="fas fa-arrow-right"></i></span></button>
+                                </div>
+
+                                <div class="w-full h-full flex justify-center items-start flex-col absolute textSlide">
+                                    <h1 class="text-white text-3xl font-bold mb-10">
+                                        <span class="text-pink">Kananga</span> farmers cultivate land awarded 29 years ago for the first time
+                                    </h1>
+                                    <p class="text-gray-300 mb-10">
+                                        For 29 years, the fourteen (14) agrarian reform beneficiaries from Kananga, 
+                                        Leyte struggled to cultivate the 6-hectare land they acquired through CARP. 
+                                        Last January 4, 2018, their certificate
+
+
+                                    </p>
+
+                                    <button class="w-40 py-3 border-4 border-green-800 bg-green-800 text-white font-bold hover:bg-white hover:text-black">READ MORE <span class="font-thin text-md"><i class="fas fa-arrow-right"></i></span></button>
+                                </div>
+
+                                
+                                <div class="w-full h-full flex justify-center items-start flex-col absolute textSlide">
+                                    <h1 class="text-white text-3xl font-bold mb-10">
+                                        <span class="text-pink">Leyte</span> farmers gear up for DOST-EVSU Mushroom Project
+                                    </h1>
+                                    <p class="text-gray-300 mb-10">
+                                        ORMOC City – The Department of Science and Technology (DOST) turned over, 
+                                        last May 22, a half a million-peso worth of funding for an Oyster Mushroom 
+                                        Production project to its main implement
+                                    </p>
+
+                                    <button class="w-40 py-3 border-4 border-green-800 bg-green-800 text-white font-bold hover:bg-white hover:text-black">READ MORE <span class="font-thin text-md"><i class="fas fa-arrow-right"></i></span></button>
+                                </div>
+                            </div>
+                        </div>
+                      
+                            <div class="absolute w-56 tablet:flex flex-wrap mobile:hidden" style="right: -2px;top:35%">
+                                <div class="w-full text-white text-2xl">
+                                    <span class="text-3xl" id="span">01</span>/05
+                                </div>
+                                <div class="w-9/12 relative">
+                                    <div class="w-full h-full bg-cover bg-center absolute transition-opacity duration-500 smallBack activeSmall" style="background-image: url('images/pic2.jpg');"></div>
+                                    <div class="w-full h-full bg-cover bg-center absolute transition-opacity duration-500 smallBack" style="background-image: url('images/pic3.jpg');"></div>
+                                    <div class="w-full h-full bg-cover bg-center absolute transition-opacity duration-500 smallBack" style="background-image: url('images/pic4.jpg');"></div>
+                                    <div class="w-full h-full bg-cover bg-center absolute transition-opacity duration-500 smallBack" style="background-image: url('images/pic5.jpg');"></div>
+                                    <div class="w-full h-full bg-cover bg-center absolute transition-opacity duration-500 smallBack" style="background-image: url('images/pic1.jpg');"></div>
+                              
+                                </div>
+                                <div class="w-3/12 h-28 bg-white flex flex-col ">
+                                    <div class="h-3/6 flex justify-center items-center text-gray-500 cursor-pointer" id="prev">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </div>
+                                    <div class="h-3/6 flex justify-center items-center text-gray-500 cursor-pointer" id="next">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                       
+                    </div>
+                    <div class="w-full h-full bg-cover bg-center absolute transition-opacity duration-500 backgroundpic activePic" style="background-image: url('images/pic1.jpg');"></div>
+                    <div class="w-full h-full bg-cover bg-center absolute transition-opacity duration-500 backgroundpic" style="background-image: url('images/pic2.jpg');"></div>
+                    <div class="w-full h-full bg-cover bg-center absolute transition-opacity duration-500 backgroundpic" style="background-image: url('images/pic3.jpg');"></div>
+                    <div class="w-full h-full bg-cover bg-center absolute transition-opacity duration-500 backgroundpic" style="background-image: url('images/pic4.jpg');"></div>
+                    <div class="w-full h-full bg-cover bg-center absolute transition-opacity duration-500 backgroundpic" style="background-image: url('images/pic5.jpg');"></div>
+                </div>
+
+                <div class="relative laptop:w-3/12 tablet:w-6/12 mobile:w-full overflow-hidden laptop:h-22vh mobile:h-25vh" id="back1" onmouseover ="scale(this)" onmouseout="scaleOut(this)">
+                   <div class="relative h-full w-full bg-center bg-cover p-3 transition duration-500"  style="background-image:url('images/pic_1.jpg')">
+                       
+                    </div>
+                    <div class="absolute w-full h-full top-0 bg-grayo">
+                        <p class="absolute bottom-0 left-1 font-bold">PROUD VASFA! PROUD BENEFICIARIES!</p>
+                    </div>
+                </div>
+
+                <div class="relative laptop:w-3/12 tablet:w-6/12 mobile:w-full overflow-hidden laptop:h-22vh mobile:h-25vh"  id="back2" onmouseover ="scale(this)" onmouseout="scaleOut(this)">
+                    <div class="relative h-full w-full bg-center bg-cover p-3 transition duration-500"  style="background-image:url('images/pic_2.jpg')">
+                       
+                    </div>
+                    <div class="absolute w-full h-full top-0 bg-grayo">
+                        <p class="absolute bottom-0 left-1 font-bold">Agrarian Reform and a Risked Marriage</p>
+                    </div>
+                </div>
+            
+                <div class="relative laptop:w-3/12 tablet:w-6/12 mobile:w-full overflow-hidden laptop:h-22vh mobile:h-25vh" id="back3" onmouseover ="scale(this)" onmouseout="scaleOut(this)">
+                    <div class="relative h-full w-full bg-center bg-cover p-3 transition duration-500" style="background-image:url('images/pic_3.jpg')">
+                       
+                    </div>
+                    <div class="absolute w-full h-full top-0 bg-grayo">
+                        <p class="absolute bottom-0 left-1 font-bold">Tatay’s Influence</p>
+                    </div>
+                </div>
+                
+                <div class="relative laptop:w-3/12 tablet:w-6/12 mobile:w-full overflow-hidden laptop:h-22vh mobile:h-25vh" id="back4" onmouseover ="scale(this)" onmouseout="scaleOut(this)">
+                    <div class="relative h-full w-full bg-center bg-cover p-3 transition duration-500"  style="background-image:url('images/pic_4.jpg')">
+                     
+                    </div>
+                    <div class="absolute w-full h-full top-0 bg-grayo">
+                        <p class="absolute bottom-0 left-1 font-bold">GIFTS GUIFA</p>
+                    </div>
+                </div>
+
+
+
+                <div class="w-full pt-12 mt-12 border-t border-black flex flex-wrap laptop:px-0 tablet:px-12">
+                   <div class="w-full">
+                       <h1 class="text-3xl tablet:text-2xl mobile:text-2xl font-extrabold text-kaisahan-font-color mb-4">FEATURE STORY</h1>
+                   </div>
+                   <div class="tablet:w-4/12 laptop:h-52 tablet:h-32 mobile:w-full mobile:h-96 mobile:mb-4 tablet:mb-0 bg-center bg-cover" style="background-image: url('images/pic_1.jpg');">
+
+                   </div>
+                   <div class="tablet:w-8/12 mobile:w-full px-4">
+                       <h1 class="text-3xl tablet:text-2xl mobile:text-2xl font-extrabold text-kaisahan-font-color">PROUD VASFA! PROUD BENEFICIARIES!</h1>
+                       <p class="mb-2 text-xs">VASFA Farmers</p>
+                       <p class="text-gray-600 mb-3">Three years after installation, a lot of things have changed
+                        with the Valencia Agrarian Farmers Association (VASFA) and our members. We now
+                        have other income-generating activities aside fro</p>
+                        <button class="bg-gray-500 px-6 py-2 font-bold text-xs hover:bg-gray-800 hover:text-white">READ MORE</button>
+                   </div>
+                </div>
+                <div class="w-full pt-12 mt-12 border-t border-black flex flex-wrap">
+
+                    <div class="w-full laptop:p-0 mobile:px-6">
+                        <h1 class="text-3xl tablet:text-2xl mobile:text-2xl font-extrabold text-kaisahan-font-color mb-4">RESOURCES</h1>
+                    </div>
+                    <div class="tablet:W-4/12 mobile:w-full tablet:h-96 mobile:h-screen mb-20  py-2 laptop:px-12 mobile:px-2">
+                        <div class="bg-cover bg-center w-full h-full" style="background-image: url(images/view_1.jpg);"></div>
+                        <button class="bg-gray-500 py-2 w-full mt-6 font-bold text-xs hover:bg-gray-800 hover:text-white">VIEW ALL PUBLICATION</button>
+                    </div>
+                    <div class="tablet:W-4/12 mobile:w-full tablet:h-96 mobile:h-screen mb-20  py-2 laptop:px-12 mobile:px-2">
+                        <div class="bg-cover bg-center w-full h-full" style="background-image: url(images/view_2.jpg);"></div>
+                        <button class="bg-gray-500 py-2 w-full mt-6 font-bold text-xs hover:bg-gray-800 hover:text-white">VIEW ALL POSITION PAPERS</button>
+                    </div>
+                    <div class="tablet:W-4/12 mobile:w-full tablet:h-96 mobile:h-screen mb-20  py-2 laptop:px-12 mobile:px-2">
+                        <div class="bg-cover bg-center w-full h-full" style="background-image: url(images/view_3.jpg);"></div>
+                        <button class="bg-gray-500 py-2 w-full mt-6 font-bold text-xs hover:bg-gray-800 hover:text-white">VIEW ALL PRESS STATEMENTS</button>
+                    </div>
+                    
+                 </div>
+                 <div class="w-full pt-12 mt-12 border-t border-black flex flex-wrap">
+                    <div class="laptop:w-4/12 laptop:pl-0 tablet:w-6/12 mobile:w-full tablet:px-4 mobile:px-6 mb-10">
+                        <img src="images/logo.png" class="h-32" alt="">
+                        <h1  class="text-2xl font-extrabold text-kaisahan-font-color mb-3 mt-3">KAISAHAN</h1>
+                        <p  class="text-lg font-bold text-kaisahan-font-color mb-3">tungo sa Kaunlaran ng Kanayunan at Repormang Pansakahan</p>
+                        <p class="font-thin mb-3">38-B Mapagsangguni St. Sikatuna Village, Quezon City 1101 PHILIPPINES</p>
+                        <p class="font-thin">+632 433 0760</p>
+                        <p class="font-thin mb-3">+632 921 5436</p>
+                        <p class="font-thin">kaisahan@kaisahan.com.ph</p>
+                    </div>
+
+                    <div class="laptop:w-4/12  tablet:w-6/12 mobile:w-full mb-10 tablet:px-4 mobile:px-6">
+
+                        <h1 class="text-2xl font-bold text-kaisahan-font-color mb-4 mt-3">Social</h1>
+                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FKaisahan.NGO%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" 
+                        width="100%" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" 
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+
+                    </div>
+
+                    <div class="laptop:w-4/12 tablet:px-4 mb-10 mobile:px-6">
+                         <h1 class="text-2xl font-bold text-kaisahan-font-color mb-4 mt-3">Question? Comments?</h1>
+                         <input type="text" class="w-full border-gray border rounded px-4 py-2 mb-3" placeholder="Name">
+                         <input type="text" class="w-full border-gray border rounded px-4 py-2 mb-3" placeholder="Email">
+                         <textarea name="textarea" id="" cols="30" rows="10" class="w-full border-gray border rounded px-4 py-2 mb-3" placeholder="Message"></textarea>
+                         <button class="bg-gray-500 px-6 py-2 font-bold text-xs hover:bg-gray-800 hover:text-white float-right">SEND</button>
+                    </div>
+                   
+                 </div>
+                 <div class="w-full flex justify-between h-10 mt-6 laptop:px-0 tablet:px-4 mobile:px-6">
+                     <p class="text-xs font-thin">Copyright © 2021 kaisahan.com.ph</p>
+                     <p class="text-xs font-thin float-right">Website designed and developed by MagisSolutions Inc.</p>
+                 </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const backgroundpic = document.querySelectorAll('.backgroundpic');
+    const smallBack = document.querySelectorAll('.smallBack');
+    const box = document.querySelectorAll('.box');
+    const textSlide = document.querySelectorAll('.textSlide');
+    let slideLength = textSlide.length;
+    let eachEl = 0;
+    let a = 1;
+    textSlide.forEach((eachClass) =>{
+        let add = 100 * eachEl;
+        eachClass.style.transform = "translateY(" + add + "%)";
+        eachEl++;
+    });
+    box.forEach((boxClass, index) =>{
+        boxClass.addEventListener("click", () =>{
+            slider(index);
+        })
+    })
+
+    
+    const conSlide = document.querySelector('#SlideContainer');
+    const nextss = document.querySelector('#next');
+    const prev = document.querySelector('#prev');
+    let currentSlide = 0;
+    let span = 1
+    nextss.addEventListener("click", () =>{
+        if(currentSlide == slideLength - 1){
+            slider(0);
+            currentSlide = 0;
+        }
+        else{
+            currentSlide = currentSlide + 1;
+            slider(currentSlide);
+        }
+    });
+
+    prev.addEventListener("click", () =>{
+        if(currentSlide == 0){
+            slider(slideLength -1);
+            currentSlide = slideLength -1;
+        }
+        else{
+            currentSlide = currentSlide - 1;
+            slider(currentSlide);
+        }
+      
+    });
+ 
+    function slider(numbernext){
+        let wid = 100 * numbernext;
+        conSlide.style.transform = "translateY(-" + wid + "%)";
+        const currentBack = document.querySelector('.activePic');
+        currentBack.classList.remove('activePic');
+        backgroundpic[numbernext].classList.add('activePic');
+
+        const boxActive = document.querySelector('.activeBox');
+        boxActive.classList.remove('activeBox');
+        box[numbernext].classList.add('activeBox');
+
+        let span = numbernext + 1;
+        document.getElementById('span').innerHTML = '0' +  span;
+
+        const activeSmall = document.querySelector('.activeSmall');
+        activeSmall.classList.remove('activeSmall');
+        smallBack[numbernext].classList.add('activeSmall');
+    }
+
+
+
+    const searchCon = document.querySelector('#search');
+    searchCon.addEventListener('mouseup',function(event){
+        const searchbox = document.querySelector('#searchbox');
+        if(event.target != searchbox){
+            searchCon.style.display='none';
+        }
+    });
+    function showNhide(){
+        const checkbox = document.querySelector('#checkbox');
+        const x = document.querySelector('#x');
+        const m = document.querySelector('#m');
+        if(checkbox.checked){
+            document.querySelector('#sbMenu').style.height = '0';
+            x.style.display = "none";
+            m.style.display = "inline";
+        }
+        else{
+            document.querySelector('#sbMenu').style.height = '100%';
+            x.style.display = "inline";
+            m.style.display = "none";
+        }
+    }
+ 
+    function openSub(openId){
+        const id = openId.id;
+        const mainElement = document.getElementById(id);
+        const secondElement = mainElement.nextElementSibling;
+
+            if(secondElement.style.height == '100%'){
+                secondElement.style.height = '0px';
+            }
+            else{
+                secondElement.style.height = '100%';
+            }       
+    }
+
+    function toTop(){
+     
+    }
+    function navIn(nav){
+        const id = nav.id;
+        const navparents = document.getElementById(id);
+        const navchild = navparents.children;
+        navchild[1].style.display="flex";
+    }
+    function navOut(nav){
+        const id = nav.id;
+        const navparents = document.getElementById(id);
+        const navchild = navparents.children;
+        navchild[1].style.display="none";
+    }
+    function scale(in_id){
+        const id = in_id.id;
+        const parents = document.getElementById(id);
+        const child = parents.children;
+        child[0].style.transform = 'scale(1.2)';
+    }
+    function scaleOut(out_id){
+        const id = out_id.id;
+        const parents = document.getElementById(id);
+        const child = parents.children;
+        child[0].style.transform = 'scale(1)';
+    }
+    function search(){
+        const search = document.querySelector('#search');
+        search.style.display = 'flex';
+    }
+</script>
+</html>
